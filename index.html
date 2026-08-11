@@ -1,168 +1,935 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Three Sixteen Bread</title>
+  <title>THREE SIXTEEN BREAD</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Small-batch sourdough, cookies, and cinnamon rolls made locally."
+  />
 
-<style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <style>
 
-body{
-    font-family:'Inter',sans-serif;
-    background:#fbe9e4;
-    color:#3f3f3f;
-    line-height:1.7;
-}
+    /* =========================================
+       COLORS & GLOBAL STYLES
+       ========================================= */
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px;
-}
+    :root {
+      --cream: #f6f1e8;
+      --paper: #fbf9f4;
+      --brown: #4b382d;
+      --dark-brown: #38291f;
+      --soft-brown: #786357;
+      --sage: #737965;
+      --light-sage: #e4e5dc;
+      --line: #ddd4c7;
+      --accent: #b69b78;
+      --white: #fffdf9;
+    }
 
-.card{
-    background:#fff8f0;
-    max-width:760px;
-    width:100%;
-    border-radius:24px;
-    padding:60px;
-    text-align:center;
-    box-shadow:0 20px 60px rgba(63,63,63,.10);
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.logo{
-    width:220px;
-    max-width:80%;
-    height:auto;
-    margin-bottom:25px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.subtitle{
-    color:#6b6b6b;
-    font-size:1.15rem;
-    margin-bottom:35px;
-}
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
 
-.line{
-    width:90px;
-    height:2px;
-    background:#e7aaa0;
-    margin:30px auto 40px;
-}
+    a {
+      color: inherit;
+    }
 
-p{
-    font-size:1.05rem;
-    margin-bottom:18px;
-}
 
-.highlight{
-    font-weight:600;
-    color:#333333;
-}
+    /* =========================================
+       NAVIGATION
+       ========================================= */
 
-.buttons{
-    margin-top:40px;
-}
+    nav {
+      width: 100%;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 241, 232, 0.96);
+      position: relative;
+      z-index: 10;
+    }
 
-.button{
-    display:inline-block;
-    text-decoration:none;
-    background:#3f3f3f;
-    color:#fff8f0;
-    padding:15px 28px;
-    margin:8px;
-    border-radius:999px;
-    transition:.25s;
-}
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+    }
 
-.button:hover{
-    background:#e7aaa0;
-    color:#3f3f3f;
-    transform:translateY(-2px);
-}
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
 
-.note{
-    margin-top:40px;
-    color:#777777;
-    font-size:.95rem;
-}
+    .nav-links a {
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
-@media(max-width:700px){
+    .nav-links a:hover {
+      color: var(--sage);
+    }
 
-.card{
-    padding:40px 28px;
-}
 
-.logo{
-    width:170px;
-}
+    /* =========================================
+       HERO
+       ========================================= */
 
-}
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 90px 20px;
 
-</style>
+      /*
+        Optional:
+        Add a photo named "hero.jpg" to your repository.
+        If you don't have one yet, the background color
+        will still look nice.
+      */
+
+      background:
+        linear-gradient(
+          rgba(246, 241, 232, 0.78),
+          rgba(246, 241, 232, 0.78)
+        ),
+        url("hero.jpg") center / cover;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+    }
+
+    .eyebrow,
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.67rem;
+      letter-spacing: 0.22em;
+      color: var(--sage);
+    }
+
+    .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(4rem, 10vw, 7.5rem);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.045em;
+      margin-bottom: 30px;
+      color: var(--dark-brown);
+    }
+
+    .hero-description {
+      max-width: 520px;
+      margin: 0 auto 35px;
+      color: var(--soft-brown);
+      font-size: 1rem;
+    }
+
+
+    /* =========================================
+       BUTTONS
+       ========================================= */
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--brown);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      border: 1px solid var(--brown);
+    }
+
+    .button:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--brown);
+      margin-left: 8px;
+    }
+
+    .button-outline:hover {
+      background: var(--brown);
+      border-color: var(--brown);
+      color: var(--white);
+    }
+
+
+    /* =========================================
+       GENERAL SECTIONS
+       ========================================= */
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--dark-brown);
+    }
+
+
+    /* =========================================
+       MENU
+       ========================================= */
+
+    .menu-section {
+      background: var(--paper);
+    }
+
+    .menu-header {
+      max-width: 600px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .menu-header .section-label {
+      margin-bottom: 12px;
+    }
+
+    .menu-header p {
+      margin-top: 15px;
+      color: var(--soft-brown);
+      font-size: 0.9rem;
+    }
+
+
+    /* NEXT DROP */
+
+    .next-drop {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .next-drop span {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: var(--sage);
+      margin-bottom: 5px;
+    }
+
+    .next-drop strong {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+
+
+    /* MENU GRID */
+
+    .menu-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-column {
+      padding: 40px 35px;
+      text-align: center;
+    }
+
+    .menu-column + .menu-column {
+      border-left: 1px solid var(--line);
+    }
+
+    .menu-column h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+      color: var(--dark-brown);
+    }
+
+    .menu-item {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-item:first-of-type {
+      border-top: none;
+    }
+
+    .menu-item-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+    }
+
+    .menu-item-description {
+      display: block;
+      margin-top: 4px;
+      color: var(--soft-brown);
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    .menu-price {
+      display: block;
+      margin-top: 7px;
+      color: var(--sage);
+      font-size: 0.72rem;
+    }
+
+
+    /* ORDER */
+
+    .order {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .order-note {
+      margin-top: 14px;
+      color: var(--soft-brown);
+      font-size: 0.7rem;
+    }
+
+
+    /* =========================================
+       ABOUT
+       ========================================= */
+
+    .about-section {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-section .section-label {
+      margin-bottom: 12px;
+    }
+
+    .about-section p {
+      max-width: 650px;
+      margin: 22px auto 0;
+      color: var(--soft-brown);
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================================
+       PAYMENT
+       ========================================= */
+
+    .payment-section {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .payment-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .payment-inner .section-label {
+      margin-bottom: 12px;
+    }
+
+    .payment-intro {
+      max-width: 520px;
+      margin: 16px auto 40px;
+      color: var(--soft-brown);
+      font-size: 0.9rem;
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .payment-option {
+      padding: 28px 15px;
+    }
+
+    .payment-option + .payment-option {
+      border-left: 1px solid var(--line);
+    }
+
+    .payment-name {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      color: var(--dark-brown);
+    }
+
+    .payment-detail {
+      display: block;
+      margin-top: 5px;
+      color: var(--soft-brown);
+      font-size: 0.68rem;
+      line-height: 1.45;
+    }
+
+    .payment-note {
+      max-width: 550px;
+      margin: 22px auto 0;
+      color: var(--soft-brown);
+      font-size: 0.7rem;
+    }
+
+
+    /* =========================================
+       INSTAGRAM
+       ========================================= */
+
+    .instagram-section {
+      background: var(--light-sage);
+      text-align: center;
+    }
+
+    .instagram-section .section-label {
+      margin-bottom: 12px;
+    }
+
+    .instagram-section p {
+      max-width: 480px;
+      margin: 18px auto 28px;
+      color: var(--soft-brown);
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+      padding: 38px 20px;
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .footer-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    footer p {
+      font-size: 0.68rem;
+      opacity: 0.7;
+    }
+
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 20px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        font-size: 0.65rem;
+      }
+
+      .hero {
+        min-height: 75vh;
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem, 20vw, 6rem);
+      }
+
+      .hero-description {
+        font-size: 0.9rem;
+      }
+
+      .button-outline {
+        margin: 10px 0 0;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+
+      /* MENU */
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-column {
+        padding: 35px 20px;
+      }
+
+      .menu-column + .menu-column {
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
+
+
+      /* PAYMENT */
+
+      .payment-options {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .payment-option:nth-child(3) {
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .payment-option:nth-child(4) {
+        border-top: 1px solid var(--line);
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<section class="hero">
 
-<div class="card">
+  <!-- =========================================
+       NAVIGATION
+       ========================================= -->
 
-<img class="logo" src="logo.png" alt="Three Sixteen Bread logo">
+  <nav>
 
-<div class="subtitle">
-Your friendly neighborhood, small-batch sourdough baker • John 3:16
+    <a href="#" class="brand">
+      YOUR BAKERY
+    </a>
+
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#payment">Payment</a>
+      <a href="#instagram">Instagram</a>
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================================
+       HERO
+       ========================================= -->
+
+  <header class="hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        Small batch faith-based cottage bakery · baked locally
+      </div>
+
+      <h1>
+        Welcome.
+      </h1>
+
+      <p class="hero-description">
+        Sourdough, cookies, and cinnamon rolls,
+        made from scratch and baked in small batches.
+      </p>
+
+      <a href="#menu" class="button">
+        See the Menu
+      </a>
+
+      <a
+        href="YOUR-INSTAGRAM-LINK"
+        class="button button-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================
+       MENU
+       ========================================= -->
+
+  <section id="menu" class="menu-section">
+
+    <div class="menu-header">
+
+      <div class="section-label">
+        The current menu
+      </div>
+
+      <h2 class="section-title">
+        What's baking
+      </h2>
+
+      <p>
+        Our menu changes with the seasons and is available
+        during our twice-monthly bakery drops.
+      </p>
+
+    </div>
+
+
+    <!-- CHANGE THIS DATE -->
+
+    <div class="next-drop">
+
+      <span>
+        Next bakery drop
+      </span>
+
+      <strong>
+        Saturday · September 12
+      </strong>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+      <!-- =====================================
+           SOURDOUGH
+           ===================================== -->
+
+      <div class="menu-column">
+
+        <h3>Sourdough</h3>
+
+        <div class="menu-item">
+
+          <span class="menu-item-name">
+            Classic Artisan Loaf
+          </span>
+
+          <span class="menu-item-description">
+            Naturally leavened, crisp crust,
+            soft crumb.
+          </span>
+
+          <span class="menu-price">
+            $13
+          </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <span class="menu-item-name">
+            Cranberry Walnut
+          </span>
+
+          <span class="menu-item-description">
+            Tart cranberry and toasted walnut.
+          </span>
+
+          <span class="menu-price">
+            $16
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================
+           COOKIES
+           ===================================== -->
+
+      <div class="menu-column">
+
+        <h3>Cookies</h3>
+
+        <div class="menu-item">
+
+          <span class="menu-item-name">
+            Brown Butter Chocolate Chip
+          </span>
+
+          <span class="menu-item-description">
+            Brown butter, dark chocolate,
+            flaky sea salt.
+          </span>
+
+          <span class="menu-price">
+            $18 · six
+          </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <span class="menu-item-name">
+            Maple Pecan
+          </span>
+
+          <span class="menu-item-description">
+            Toasted pecans and maple.
+          </span>
+
+          <span class="menu-price">
+            $20 · six
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================
+           CINNAMON ROLLS
+           ===================================== -->
+
+      <div class="menu-column">
+
+        <h3>Cinnamon Rolls</h3>
+
+        <div class="menu-item">
+
+          <span class="menu-item-name">
+            Classic
+          </span>
+
+          <span class="menu-item-description">
+            Soft, buttery, generously spiced.
+          </span>
+
+          <span class="menu-price">
+            $20 · four
+          </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <span class="menu-item-name">
+            Apple Pie
+          </span>
+
+          <span class="menu-item-description">
+            Cinnamon apples and vanilla glaze.
+          </span>
+
+          <span class="menu-price">
+            $24 · four
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         ORDER BUTTON
+         ===================================== -->
+
+    <div class="order">
+
+      <a
+        href="YOUR-GOOGLE-FORM-LINK"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Order from this drop
+      </a>
+
+      <p class="order-note">
+        Limited quantities · Pickup only
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       ABOUT
+       ========================================= -->
+
+  <section id="about">
+
+    <div class="about-section">
+
+      <div class="section-label">
+        A little about us
+      </div>
+
+      <h2 class="section-title">
+        Made slowly.
+        <br>
+        Shared gladly.
+      </h2>
+
+      <p>
+        Everything is made from scratch in small batches,
+        with good ingredients, plenty of patience, and a
+        love for the simple things.
+      </p>
+
+      <p>
+        We're a small cottage bakery, so you'll find us
+        baking twice a month with a rotating selection
+        of seasonal favorites.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================================
+       PAYMENT
+       ========================================= -->
+
+  <section id="payment" class="payment-section">
+
+    <div class="payment-options">
+
+  <div class="payment-option">
+    <span class="payment-name">Zelle</span>
+  </div>
+
+  <div class="payment-option">
+    <span class="payment-name">Venmo</span>
+  </div>
+
+  <div class="payment-option">
+    <span class="payment-name">Cash App</span>
+  </div>
+
+  <div class="payment-option">
+    <span class="payment-name">Card</span>
+    <span class="payment-detail">via Stripe</span>
+  </div>
+
 </div>
 
-<div class="line"></div>
 
-<p>
-Welcome!<br>We're a faith-based microbakery making sourdough bread, cookies, and other baked goods from scratch.
-</p>
+      <p class="payment-note">
+        Payment instructions are provided with your
+        order confirmation. 
+      </p>
 
-<p class="highlight">
-We're currently accepting orders.
-</p>
+    </div>
 
-<p>
-For our menu, ordering information, and updates, please fill out our order form or follow us on Instagram.
-</p>
+  </section>
 
-<div class="buttons">
 
-<a class="button" href="https://forms.gle/KkGKU7ovBuao79Jv7" target="_blank">
-🥖 Place an Order
-</a>
 
-<a class="button" href="https://instagram.com/316bread" target="_blank">
-📷 Instagram
-</a>
+  <!-- =========================================
+       INSTAGRAM
+       ========================================= -->
 
-</div>
+  <section id="instagram" class="instagram-section">
 
-<div class="note">
+    <div class="section-label">
+      Follow along
+    </div>
 
-Have a blessed day!<br>
-We look forward to baking for you.
+    <h2 class="section-title">
+      Behind the bake
+    </h2>
 
-</div>
+    <p>
+      New menus, baking days, fresh loaves, and
+      whatever is coming out of the oven next.
+    </p>
 
-</div>
+    <a
+      href="YOUR-INSTAGRAM-LINK"
+      class="button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Visit Instagram
+    </a>
 
-</section>
+  </section>
+
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <footer>
+
+    <div class="footer-name">
+      THREE SIXTEEN BREAD
+    </div>
+
+    <p>
+      Small-batch faith-based cottage bakery · © 2026
+    </p>
+
+  </footer>
+
 
 </body>
 </html>
